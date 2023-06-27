@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ws-team-4
+  labels:
+    app: ws-team-4
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ws-team-4
+  template:
+    metadata:
+      labels:
+        app: ws-team-4
+    spec:
+      containers:
+        - name: ws-monolith
+          image: WsTeam4:TAG
+          ports:
+            - containerPort: 80
+
